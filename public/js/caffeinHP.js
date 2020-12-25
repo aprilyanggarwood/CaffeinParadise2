@@ -1,7 +1,7 @@
 // FOR TYPWRITING WHEN CLICK
 
 var i = 0;
-var txt = 'C A F F E I N E...P A R A D I S E'; 
+var txt = 'Caffeine Paradise'; 
 var speed = 300; 
 
 function typeWriter() {
@@ -20,7 +20,7 @@ function typeWriter() {
 window.onscroll = function() {myFunction()};
 
 // Get the navbar
-var navbar = document.getElementById("navbar");
+var navbar = document.getElementById("navbarHP");
 
 var sticky = navbar.offsetTop;
 function myFunction() {

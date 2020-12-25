@@ -58,15 +58,21 @@ $(document).ready(function () {
   }
 
   $(".place-btn").click(function () {
-    $.ajax({
-      method: "POST",
-      url: "/api/order",
-      data: { cart, subTotal },
-    }).then((data) => {
-      localStorage.removeItem("savedCart");
-      window.location.reload();
-    });
+    location.replace("/cart");
   });
+
+  // $(".place-btn").click(function () {
+  //   $.ajax({
+  //     method: "POST",
+  //     url: "/api/order",
+  //     data: { cart, subTotal },
+  //   }).then((data) => {
+  //     localStorage.removeItem("savedCart");
+  //     window.location.reload();
+  //   });
+  // });
+
+  $("#logout").click(() => $.get("/api/logout").then(() => location.reload()));
 
   $(".showDetails").click(function () {
     const orderId = $(this).attr("data-order-id");

@@ -10,15 +10,15 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/login", (req, res) => {
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -35,5 +35,9 @@ module.exports = function (app) {
     const drinks = await db.CoffeeDrinks.findAll({ raw: true });
     const orders = await db.Order.findAll({ raw: true });
     res.render("index", { drinks, orders });
+  });
+
+  app.get("/cart", isAuthenticated, (req, res) => {
+    res.render("checkout");
   });
 };

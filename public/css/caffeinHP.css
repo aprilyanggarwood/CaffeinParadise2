@@ -18,21 +18,19 @@
   transform: translate(-50%, -50%);
   color: whitesmoke;
   font-family: 'Mountains of Christmas', cursive;
-  font-size: 80px;
+  font-size: 50px;
   font-weight: bolder;
+}
+.hero-text h2 {
+  color:whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
 }
 
 .hero-image button{
   margin-top: 26%;
   margin-left:45%;
 } 
-
-
-h1, h3, a, h2 {
-    color:whitesmoke;
-    font-family: 'Fredericka the Great', cursive;
-    font-weight: bolder;
-}
 
 
 /* ************************************************* */
@@ -43,10 +41,11 @@ h1, h3, a, h2 {
     position: fixed;
     left: 0;
     bottom: 0;
+    top: 1;
     width: 100%;
     background-color: whitesmoke;
     text-align: center;
-    color: rgb(39, 192, 179);
+    color: rgb(19, 20, 20);
   }
   
 .fixed-footer {
@@ -55,12 +54,20 @@ h1, h3, a, h2 {
     padding: 10px 0;
     left: 0;
     bottom: 0;
+    margin-top: 5%;
   }
+
+.footer p {
+  color:black;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: bolder;
+}
 
 /* ************************************************* */
     /* FOR STICKY NAV BAR */
 /* ************************************************* */
-#navbar {
+
+#navbarHP {
     overflow: hidden;
     background-color: rgb(22, 23, 24);
     width: 100%;
@@ -69,7 +76,7 @@ h1, h3, a, h2 {
     
   }
   
-#navbar, .navL, .btnNav {
+#navbarHP, .navL, .btnNav {
     float: left;
     display: block;
     color: #110f0f;
@@ -78,7 +85,7 @@ h1, h3, a, h2 {
    
   }
   
-#navbar, .navR {
+#navbarHP, .navR {
     float: Right;
     display: block;
     color: #f2f2f2;
@@ -88,14 +95,20 @@ h1, h3, a, h2 {
    
   }
   
-#navbar a:hover {
+#navbarHP a:hover {
     background-color:rgb(39, 192, 179);
     color: black;
   }
   
-#navbar, a.active {
+#navbarHP, a.active {
     background-color: #4CAF50;
     color: white;
+  }
+
+#navbarHP a {
+    color:whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
   }
   
 .sticky {
@@ -126,21 +139,39 @@ h1, h3, a, h2 {
     background-color: dodgerblue;
     color: white;
   }
-  
+
+#navbarHP h2 {
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: bolder;
+  font-size: 45px;
+  color: white;
+}
 
 /* ************************************************* */ 
     /* FOR PARALLAX */
 /* ************************************************* */
 
 .parallax {
-/* The image used */
-background-image: url("/pictures/pexels-spencer-selover-428310.jpg");
--webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: azure;
-  
+
+background-image: url("/pictures/body.jpg");
+width: 100%;
+
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+margin-bottom: -40px;
+
+}
+
+.parallax h2 {
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: bolder;
+  font-size: 60px;
+  color: rgb(51, 20, 20);
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
@@ -164,7 +195,7 @@ background-image: url("/pictures/pexels-spencer-selover-428310.jpg");
 
 }
 
-#img .container {
+#img .containerSignUp {
   margin-top: 30%;
   margin-left: 3%;
 }
@@ -203,4 +234,16 @@ width: 100%;
 text-align: center;
 font-size: 100px;
 font-family: 'Fredericka the Great', cursive;
+}
+
+.containerSignUp h2, p {
+  color:whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
+}
+
+.card-body h4 {
+  color:rgb(19, 20, 20);
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
 }

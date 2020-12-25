@@ -1,20 +1,3 @@
-body {
-    /* The image used */
-    background-image: url("/pictures/body.jpg");
-    width: 90%;
-    height: 1900px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: -40px;
-    margin-left: 40px;
-    margin-right: 10px;
-}
-
-
 
 .container {
     margin-top: 10%;
