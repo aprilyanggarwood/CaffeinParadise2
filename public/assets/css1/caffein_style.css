@@ -190,6 +190,7 @@ textarea {
 
 .card-body {
     background-color: lightgoldenrodyellow;
+    height: 250px;
 }
 
 
@@ -237,6 +238,10 @@ container-fluid {
 .col-9 {
     padding-left: 25px;
     padding-right: 0px;
+}
+
+.col-6 {
+    margin-left: 30px;
 
 
 }
@@ -256,3 +261,7 @@ container-fluid {
 
 }
 
+.modal-content {
+margin-top:100px;
+
+}

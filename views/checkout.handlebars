@@ -232,7 +232,7 @@
       </div>
       <div class="col-25">
         <div class="containerCheck">
-          <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+          <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i><b>4</b></span></h4>
           <div id="checkoutCart">
 
           </div>
@@ -255,11 +255,11 @@
         const total = item.price * item.quan;
         subTotal += total;
         $("#checkoutCart").append(`
-      <medium>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(2)}</medium>
+      <medium>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(2)}</medium><br>
       `
         )
       });
-      $("#checkoutCart").append(`<hr><p>Subtotal - $${subTotal}</p>`)
+      $("#checkoutCart").append(`<hr><medium>Subtotal - $${subTotal}</medium>`)
     }
 
     $("#checkoutBtn").click(function () {
