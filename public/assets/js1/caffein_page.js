@@ -8,7 +8,7 @@ $(document).ready(function () {
     const name = $(this)
       .parent(".card-footer")
       .siblings(".card-body")
-      .children("h5")
+      .children("h4")
       .text();
     const quan = $(this).siblings(".quantity").val();
     const size = $(this).siblings(".price").val().split("-")[0];
