@@ -263,11 +263,12 @@
     }
 
     $("#checkoutBtn").click(function () {
-
+      const user_id = window.location.href.replace(/.+\/cart\//, '')
+      console.log(user_id);
       $.ajax({
         method: "POST",
         url: "/api/order",
-        data: { cart, subTotal },
+        data: { cart, subTotal, user_id },
       }).then((data) => {
         localStorage.removeItem("savedCart");
         window.location.replace("/members")

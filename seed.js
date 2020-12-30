@@ -1,4 +1,5 @@
 const db = require("./models");
+const sequelize = require("./config/connection");
 const seedData = [
   {
     name: "Dark Chocolate Mocha",
@@ -7,7 +8,8 @@ const seedData = [
     price_lg: 7,
     isHotDrink: true,
     img_url: "./img/black-cup-coffee.jpg",
-    short_description: "This is chocolate and coffee-lover's favorite! a great combination of espresso, chocolate and steamed milk foam",
+    short_description:
+      "This is chocolate and coffee-lover's favorite! a great combination of espresso, chocolate and steamed milk foam",
   },
 
   {
@@ -27,7 +29,8 @@ const seedData = [
     price_lg: 7,
     isHotDrink: true,
     img_url: "./img/white-cup2-coffee.jpg",
-    short_description: "An espresso-based drink with thin layer of steamed milk.",
+    short_description:
+      "An espresso-based drink with thin layer of steamed milk.",
   },
   {
     name: "Latte",
@@ -161,10 +164,10 @@ const seedData = [
   },
 ];
 
-db.sequelize
+sequelize
   .sync({ force: true })
   .then(() => {
-    db.CoffeeDrinks.bulkCreate(seedData)
+    db.Coffee.bulkCreate(seedData)
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
   })

@@ -1,8 +1,12 @@
 // Dependencies
 // =============================================================
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-module.exports = (sequelize, DataTypes) => {
-  const CoffeeDrinks = sequelize.define("CoffeeDrinks", {
+class Coffee extends Model {}
+
+Coffee.init(
+  {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,6 +55,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-  });
-  return CoffeeDrinks;
-};
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    modelName: "coffee",
+  }
+);
+
+module.exports = Coffee;

@@ -58,7 +58,7 @@ $(document).ready(function () {
   }
 
   $(".place-btn").click(function () {
-    location.replace("/cart");
+    location.replace("/cart/" + $(".titleHeading").attr("id"));
   });
 
   // $(".place-btn").click(function () {

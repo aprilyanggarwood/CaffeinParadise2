@@ -27,7 +27,7 @@ var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3000;
-var db = require("./models");
+var db = require("./config/connection");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -66,7 +66,7 @@ var routes = require("./controller/caffeinController.js");
 
 app.use(routes);
 
-db.sequelize.sync().then(function () {
+db.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });

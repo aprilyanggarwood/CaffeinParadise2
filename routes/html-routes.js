@@ -32,12 +32,20 @@ module.exports = function (app) {
   // });
 
   app.get("/members", isAuthenticated, async (req, res) => {
-    const drinks = await db.CoffeeDrinks.findAll({ raw: true });
-    const orders = await db.Order.findAll({ raw: true });
-    res.render("index", { drinks, orders });
+    const drinks = await db.Coffee.findAll({ raw: true });
+    const { dataValues: data } = await db.User.findByPk(req.user.id, {
+      include: [{ model: db.Order }],
+    });
+    console.log(data);
+    // const orders = await db.Order.findAll({ raw: true });
+    res.render("index", {
+      drinks,
+      userId: data.id,
+      orders: data.orders,
+    });
   });
 
-  app.get("/cart", isAuthenticated, (req, res) => {
+  app.get("/cart/:user_id?", isAuthenticated, (req, res) => {
     res.render("checkout");
   });
 };

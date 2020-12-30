@@ -73,6 +73,7 @@ router.post("/api/order", (req, res) => {
   db.Order.create({
     total: Number(req.body.subTotal),
     details: JSON.stringify(req.body.cart),
+    user_id: Number(req.body.user_id),
   }).then((data) => res.json(data));
 });
 
