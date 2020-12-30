@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 const sequelize = require("../config/connection");
-const seedData = require("./seedData.json");
+const seedData = require("../seedData.json");
 // Import the model to use its database functions.
 const db = require("../models");
 
