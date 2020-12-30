@@ -244,8 +244,9 @@
 <script>
   $(document).ready(() => {
     let subTotal = 0;
-    const cart = localStorage.getItem("savedCart")
-      ? JSON.parse(localStorage.getItem("savedCart"))
+    const user_id = window.location.href.replace(/.+\/cart\//, '').trim()
+    const cart = localStorage.getItem("savedCart" + user_id)
+      ? JSON.parse(localStorage.getItem("savedCart" + user_id))
       : [];
     renderCartForCheckout();
 
@@ -263,8 +264,6 @@
     }
 
     $("#checkoutBtn").click(function () {
-      const user_id = window.location.href.replace(/.+\/cart\//, '')
-      console.log(user_id);
       $.ajax({
         method: "POST",
         url: "/api/order",
