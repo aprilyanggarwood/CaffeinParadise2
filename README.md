@@ -33,7 +33,7 @@
 
 - After Sing in / Login, the user will be able to order coffee as show in the menu; select amount, size, and the price will be shown as the sizes different.<br>
 
-<img src="public/pictures/menu.png" style="width: 350px;"><br>
+<img src="public/img/ssproject4.png" style="width: 350px;"><br>
 
 - After the user place the order, the user will be able to pay by cards on checkout page and also will be able to see their order history.<br>
 
