@@ -52,7 +52,7 @@ module.exports = function (app) {
   // Route for logging user out
   app.get("/api/logout", (req, res) => {
     req.logout();
-    res.redirect("/login.html");
+    res.redirect("/signup.html");
   });
 
   // Route for getting some data about our user to be used client side
