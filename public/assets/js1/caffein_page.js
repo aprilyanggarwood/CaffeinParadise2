@@ -1,7 +1,8 @@
 $(document).ready(function () {
   let subTotal = 0;
-  const cart = localStorage.getItem("savedCart")
-    ? JSON.parse(localStorage.getItem("savedCart"))
+  const currentUserId = $(".titleHeading").attr("id");
+  const cart = localStorage.getItem("savedCart" + currentUserId)
+    ? JSON.parse(localStorage.getItem("savedCart" + currentUserId))
     : [];
   renderCart();
   $(".order-btn").on("click", function (event) {
@@ -21,7 +22,7 @@ $(document).ready(function () {
     };
     cart.push(cartItem);
     renderCart();
-    localStorage.setItem("savedCart", JSON.stringify(cart));
+    localStorage.setItem("savedCart" + currentUserId, JSON.stringify(cart));
   });
 
   function renderCart() {
@@ -54,7 +55,7 @@ $(document).ready(function () {
   function deleteFromCart(index) {
     cart.splice(Number(index), 1);
     renderCart();
-    localStorage.setItem("savedCart", JSON.stringify(cart));
+    localStorage.setItem("savedCart" + currentUserId, JSON.stringify(cart));
   }
 
   $(".place-btn").click(function () {

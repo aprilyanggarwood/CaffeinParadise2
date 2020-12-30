@@ -167,9 +167,9 @@
                     <div class="history-list">
                         {{#each orders}}
                         <ul>
-                            <h4>Order#{{id}} <button data-bs-toggle="modal" data-order-id={{id}}
+                            <h4>Order#{{dataValues.id}} <button data-bs-toggle="modal" data-order-id={{dataValues.id}}
                                     data-bs-target="#exampleModal" class=" btn btn-sm btn-success
-                         showDetails">Details</button> on {{format_time createdAt}}</h4>
+                         showDetails">Details</button> on {{format_time dataValues.createdAt}}</h4>
                         </ul>
                         {{/each}}
                     </div>

@@ -2,6 +2,8 @@ var express = require("express");
 
 var router = express.Router();
 
+const sequelize = require("./config/connection");
+const seedData = require("./seedData.json");
 // Import the model to use its database functions.
 const db = require("../models");
 
@@ -11,7 +13,7 @@ const db = require("../models");
 //   console.log("i am in diffenrent route");
 //   console.log(orders);
 //   res.render("index", { drinks, orders });
-// });
+// });const db = require("./models");
 
 router.get("/api/orderdetail/:id", async (req, res) => {
   const order = await db.Order.findByPk(req.params.id);
@@ -33,6 +35,18 @@ router.get("/api/CoffeeDrinks/:name", function (req, res) {
   }).then(function (results) {
     res.json(results);
   });
+});
+
+router.get("/api/seed/:adminpw", function (req, res) {
+  if (req.params.adminpw === process.env.ADMINPW) {
+    sequelize.sync({ force: true }).then(() => {
+      db.Coffee.bulkCreate(seedData)
+        .then((data) => res.json(`successfully seeded ${data.length} records`))
+        .catch((err) => res.json(`There was an error - `, err));
+    });
+  } else {
+    res.json("You don't have the priviledges to run seed!");
+  }
 });
 
 //
