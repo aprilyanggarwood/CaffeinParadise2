@@ -46,6 +46,6 @@ module.exports = function (app) {
   });
 
   app.get("/cart/:user_id?", isAuthenticated, (req, res) => {
-    res.render("checkout");
+    res.render("checkout", { userId: req.user.id });
   });
 };
