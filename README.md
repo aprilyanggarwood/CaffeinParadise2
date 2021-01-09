@@ -1,4 +1,4 @@
-# CaffeinParadise2 [![License](https://img.shields.io/badge/License-MIT%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+# A Full Stack App- CaffeinParadise2 [![License](https://img.shields.io/badge/License-MIT%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
 ## Table of Content
 
@@ -20,7 +20,7 @@
 
 ## Contributing
 
-Two contributers: Sai Purciful and April Yang.
+Two contributers for front-end and back-end: Sai Purciful and April Yang.
 
 ## Usage Instructions
 
